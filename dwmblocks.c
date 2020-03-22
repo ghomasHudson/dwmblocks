@@ -50,6 +50,7 @@ void replace(char *str, char old, char new)
 void getcmd(const Block *block, char *output)
 {
 	strcpy(output, block->icon);
+        printf("%s",output);
 	char *cmd = block->command;
 	FILE *cmdf = popen(cmd,"r");
 	if (!cmdf)
@@ -57,11 +58,17 @@ void getcmd(const Block *block, char *output)
 	//int N = strlen(output);
 	char c;
 	int i = strlen(block->icon);
-	while((c = fgetc(cmdf)) != EOF)
-		output[i++] = c;
-	if (delim != '\0' && --i)
-		output[i++] = delim;
-	output[i++] = '\0';
+        int i_orig = i;
+        while((c = fgetc(cmdf)) != EOF){
+                output[i++] = c;
+        }
+        if (i != i_orig)
+            if (delim != '\0' && --i){
+                    output[i++] = ' ';
+                    output[i++] = delim;
+                    output[i++] = ' ';
+            }
+        output[i++] = '\0';
 	pclose(cmdf);
 }
 

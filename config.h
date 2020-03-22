@@ -2,12 +2,12 @@
 static const Block blocks[] = {
 	/*Icon*/	/*Command*/		/*Update Interval*/	/*Update Signal*/
 	{"", "cat /tmp/recordingicon",	0,	9},
-	/* {"",	"music",	0,	11}, */
+	{"",	"music",	0,	11},
 	{"",	"pacpackages",	0,	8},
 	/* {"",	"crypto",	0,	13}, */
-	{"",	"torrent",	20,	7},
-	{"",	"news",		0,	6},
+	/*{"",	"news",		0,	6},*/
 	/* {"",	"moonphase",	18000,	5}, */
+	/*{"",	"memory",	2000,	0},*/
 	{"",	"weather",	18000,	5},
 	{"",	"mailbox",	180,	12},
 	{"",	"volume",	0,	10},
