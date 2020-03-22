@@ -69,6 +69,7 @@ void getcmd(const Block *block, char *output)
 		output++;
 	}
 	strcpy(output, block->icon);
+        printf("%s",output);
 	char *cmd = block->command;
 	FILE *cmdf = popen(cmd,"r");
 	if (!cmdf)
